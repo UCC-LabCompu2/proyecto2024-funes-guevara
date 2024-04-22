@@ -1,1 +1,6 @@
-"# proyecto2024-funes-guevara" 
+# PROYECTO TAROT
+
+# Autor
+-- **Funes Guevara**, **Ana Rosario**
+
+
