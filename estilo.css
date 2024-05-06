@@ -2,26 +2,38 @@ div{
     border: 2px solid rgba(209, 40, 238, 0.49);
     padding: 15px;
     margin: 10px 40px 5px;
-    background-color: rgba(199, 154, 227, 0.5);
+    background-color: rgba(187, 122, 246, 0.5);
     border-radius: 10px;
-    box-shadow: 4px 10px #e1be58;
 }
 #pinguin{
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     float: left;
     border-radius: 50%;
 }
-.cv{
-    text-align: center;
-    background-color: #e8ce8f;
-}
-h1,h2,h3,h4{
-    font-family: "Nunito", sans-serif;
-<!-- este no es la tipo que quiero -->
-    text-shadow: 4px 10px #58e7e7;
+.tarot{
+    text-align: justify;
+    background-color: #eee4ce;
 }
 
-<!-- .sedan-sc-regular font-family:"Sedan SC", serif;font-weight: 400;font-style: normal; -->
-<!-- .sedan-sc-regular font-family: "Sedan SC", serif;font-weight: 400;font-style: normal;-->
-<!-- .sedan-sc-regular font-family: "Sedan SC", serif;font-weight: 400;font-style: normal; -->
+ h1{
+    font-family: "Castellar", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ h2{
+     font-family: "Britannic Bold", serif;
+     font-weight: 400;
+     font-style: normal;
+ }
+
+#arcano{
+    width: 200px;
+    height: 250px;
+}
+#arcanocentro{
+    width: 150px;
+    height: 200px;
+    float: right;
+}
