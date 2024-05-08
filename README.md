@@ -4,7 +4,7 @@
 :sparkles:
 
 ## Autor
-*Ana Rosario* *Funes Guevara* :octocat:
+*Ana Rosario* *Funes Guevara* :penguin:
 - [] Estudiante de la Licenciatura en Bioinformática
 
 ## Contenido/Descripción
