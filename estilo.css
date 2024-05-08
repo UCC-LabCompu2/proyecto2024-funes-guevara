@@ -1,16 +1,16 @@
 div{
-    border: 2px solid rgba(209, 40, 238, 0.49);
+    border: 2px solid rgba(183, 62, 253, 0.49);
     padding: 15px;
     margin: 10px 40px 5px;
-    background-color: rgba(187, 122, 246, 0.5);
-    border-radius: 5px;
+    background-color: rgba(216, 183, 246, 0.5);
+    text-align: center;
 }
 .cabecera{
     border: 2px solid rgba(209, 40, 238, 0.49);
     padding: 15px;
     margin: 10px 40px 5px;
     background-color: rgba(158, 59, 248, 0.61);
-    border-radius: 5px;
+    border-radius: 0.3px;
     text-align: center;
 }
 #pinguin{
@@ -21,14 +21,21 @@ div{
 }
 .tarot{
     text-align: justify;
-    background-color: #eee4ce;
+    background-color: #c4bee8;
+    background-image: url("imagenes/gatitos.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+
+
  h1{
-    font-family: "Castellar", serif;
-    font-weight: 400;
-    font-style: normal;
-}
+     font-family: "Poetsen One", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     color: #56088f;
+ }
 
  h2{
      font-family: "Britannic Bold", serif;
@@ -46,4 +53,18 @@ div{
     height: 200px;
     float: initial;
     text-align: center;
+}
+
+a {
+        color: #cb4997;
+        width: 10px;
+        height: 10px;
+        text-decoration: none;
+}
+a:hover {
+        color: rgba(209, 40, 238, 0.49);
+    }
+a {
+        transition: color 0.8s linear 0.2s;
+    }
 }
