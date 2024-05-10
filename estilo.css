@@ -1,46 +1,56 @@
 div{
-    border: 2px solid rgba(183, 62, 253, 0.49);
-    padding: 15px;
-    margin: 10px 40px 5px;
-    background-color: rgba(216, 183, 246, 0.5);
+    border: 2px solid rgba(119, 40, 238, 0.82);
+    padding: 10px;
+    margin: 7px 20px 5px;
+    background-color: rgba(216, 183, 246, 0.81);
     text-align: center;
+    font-family:"Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
 }
 .cabecera{
-    border: 2px solid rgba(209, 40, 238, 0.49);
-    padding: 15px;
-    margin: 10px 40px 5px;
-    background-color: rgba(158, 59, 248, 0.61);
+    border: 2px solid rgba(119, 40, 238, 0.82);
+    padding: 10px;
+    margin: 7px 20px 5px;
+    background-color: rgba(158, 59, 248, 0.82);
     border-radius: 0.3px;
     text-align: center;
 }
 #pinguin{
-    width: 270px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     float: left;
     border-radius: 50%;
 }
 .tarot{
     text-align: justify;
     background-color: #c4bee8;
-    background-image: url("imagenes/gatitos.jpeg");
+    background-image: url("imagenes/fondo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family:"Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 
 
  h1{
-     font-family: "Poetsen One", sans-serif;
+     font-family: "Sedan SC", serif;
      font-weight: 400;
      font-style: normal;
+     font-size: 40px;
      color: #56088f;
  }
 
  h2{
-     font-family: "Britannic Bold", serif;
+     font-family: "Poetsen One", sans-serif;
      font-weight: 400;
      font-style: normal;
+     font-size: 30px;
+     color: #e1be58;
  }
 
 .arcano{
@@ -53,6 +63,7 @@ div{
     height: 200px;
     float: initial;
     text-align: center;
+    font-size: medium;
 }
 
 a {
@@ -60,11 +71,36 @@ a {
         width: 10px;
         height: 10px;
         text-decoration: none;
+        font-size: medium;
 }
 a:hover {
-        color: rgba(209, 40, 238, 0.49);
+        color: rgb(25, 42, 144);
     }
 a {
         transition: color 0.8s linear 0.2s;
     }
+
+
+nav {
+    border: 2px solid rgba(119, 40, 238, 0.82);
+    background-color: rgba(158, 59, 248, 0.82);
+    color: #0e0303;
+    padding: 10px;
+    margin: 7px 20px 5px;
+    font-family:"Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+    margin: 10px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
 }
