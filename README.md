@@ -13,9 +13,9 @@ y recibir una acotada descripción sobre este mismo.
 2. El wireframe de este proyecto fue diseñado con Figma, el código está desarrollado en lenguaje html5 y CSS para el diseño.
 
 
-| Email | Autor |
-| ----- | ----- |
-| 2304151@ucc.edu.ar | Ana |
+| Email              | Autor      |
+|--------------------|------------|
+| 2304151@ucc.edu.ar | Ana        |
 
 
 Link del Proyecto: [Calculadora de Arcanos](https://ucc-labcompu2.github.io/proyecto2024-funes-guevara/)
