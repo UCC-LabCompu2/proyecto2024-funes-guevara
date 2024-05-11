@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta content="Ana Rosario Funes" name="autor">
+    <meta content="arcanos, tarot, calcular, html, css" name="keywords">
     <title>Calculadora de Arcanos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,11 +36,17 @@
 </nav>
 
 <body class="tarot">
+<canvas id="miCanvas" width="100" height="100"> </canvas>
 <div>
     <p>
         Ingrese su fecha de nacimiento:
+    </p>
+    <p>
+        <label for="dia">Día:</label>
         <input type="number" name="dia" id="dia" size="30" placeholder="Ingrese Dia: " maxlength="2" min="0">
+        <label for="mes">Mes:</label>
         <input type="number" name="mes" id="mes" size="30" placeholder="Ingrese Mes: " maxlength="2" min="0">
+        <label for="anio">Año:</label>
         <input type="number" name="anio" id="anio" size="30" placeholder="Ingrese Año: " maxlength="4" min="0">
     </p>
 

@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta content="Ana Rosario Funes" name="autor">
+    <meta content="arcanos, tarot, calcular, html, css" name="keywords">
     <title>Calculadora de Arcanos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,167 +34,165 @@
     </ul>
 </nav>
 <body class="tarot">
+<canvas id="miCanvas" width="100" height="100"> </canvas>
 <div>
-    <img class="arcanoresul" src="imagenes/arcano1.jpg">
+    <img class="arcanoresul" src="imagenes/arcano1.jpg" alt="El Mago - Carta del Tarot">
     <h3>I - El Mago</h3>
     <p>
         Representa el poder de la voluntad y la manifestación.
         Es el iniciador de acciones creativas y posee habilidades para canalizar energías y convertir ideas en realidad.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano2.jpg">
+    <img class="arcanoresul" src="imagenes/arcano2.jpg" alt="La Sacerdotisa - Carta del Tarot">
     <h3>II - La Sacerdotisa</h3>
     <p>
         Simboliza la intuición profunda, el conocimiento interior y la conexión con lo divino femenino.
         Es la guardiana de los secretos y la sabiduría oculta.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano3.jpg">
+    <img class="arcanoresul" src="imagenes/arcano3.jpg" alt="La Emperatriz - Carta del Tarot">
     <h3>III - La Emperatriz</h3>
     <p>
         Representa la feminidad, la fertilidad y la creatividad.
         Es símbolo de abundancia, belleza y poder creativo en todas sus formas.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano4.jpg">
+    <img class="arcanoresul" src="imagenes/arcano4.jpg" alt="El Emperador - Carta del Tarot">
     <h3>IV - El Emperador</h3>
     <p>
         Simboliza la autoridad, la estabilidad y el poder estructurado.
         Representa el control consciente y la capacidad de liderazgo.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano5.jpg">
+    <img class="arcanoresul" src="imagenes/arcano5.jpg" alt="El Sumo Sacerdote - Carta del Tarot">
     <h3>V - El Papa </h3>
     <p>
         Representa la enseñanza, la tradición y la búsqueda de conocimiento espiritual.
         Es el puente entre lo divino y lo humano, y representa la sabiduría recibida a través de la educación formal.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano6.jpg" >
+    <img class="arcanoresul" src="imagenes/arcano6.jpg"     alt="Los Enamorados - Carta del Tarot">
     <h3>VI - Los Enamorados</h3>
     <p>
         Simboliza la pausa, el sacrificio y la necesidad de ver las cosas desde una perspectiva diferente.
         Representa la renuncia temporal para obtener una comprensión más profunda.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano7.jpg">
+    <img class="arcanoresul" src="imagenes/arcano7.jpg" alt="El Carro - Carta del Tarot">
     <h3>VII - El Carro</h3>
     <p>
         Representa el control, la determinación y el impulso hacia adelante.
         Simboliza el éxito a través del esfuerzo y la voluntad.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano8.jpg">
+    <img class="arcanoresul" src="imagenes/arcano8.jpg" alt="La Justicia - Carta del Tarot">
     <h3>VIII - La Fuerza</h3>
     <p>
         Simboliza el coraje, la fuerza interior y el dominio de los impulsos.
         Representa la capacidad de superar desafíos con compasión y control.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano9.jpg">
+    <img class="arcanoresul" src="imagenes/arcano9.jpg" alt="El Ermitaño - Carta del Tarot">
     <h3>IX - El Ermitaño</h3>
     <p>
         Representa la introspección, la sabiduría interior y la búsqueda de respuestas en la soledad.
         Es el guía que lleva a la iluminación a través del autoconocimiento.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano10.jpg">
+    <img class="arcanoresul" src="imagenes/arcano10.jpg" alt="La Rueda de la Fortuna - Carta del Tarot">
     <h3>X - La Rueda de la Fortuna</h3>
     <p>
         Simboliza el ciclo de la vida, el destino y las oportunidades que se presentan.
         Representa los cambios inevitables y las fluctuaciones de la fortuna.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano11.jpg">
+    <img class="arcanoresul" src="imagenes/arcano11.jpg" alt="La Fuerza - Carta del Tarot">
     <h3>XI - La Justicia</h3>
     <p>
         Representa la equidad, el equilibrio y la toma de decisiones justas y basadas en la verdad.
         Es símbolo de responsabilidad y rectitud.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano12.jpg">
+    <img class="arcanoresul" src="imagenes/arcano12.jpg" alt="El Colgado - Carta del Tarot">
     <h3>XII - El Colgado</h3>
     <p>
         Simboliza la pausa, el sacrificio y la necesidad de ver las cosas desde una perspectiva diferente.
         Representa la renuncia temporal para obtener una comprensión más profunda.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano13.jpg">
+    <img class="arcanoresul" src="imagenes/arcano13.jpg" alt="La Muerte - Carta del Tarot">
     <h3>XIII - La Muerte</h3>
     <p>
         Representa el cambio, la transformación y el fin de una etapa para dar paso a una nueva.
         Es símbolo de renovación y liberación.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano14.jpg">
+    <img class="arcanoresul" src="imagenes/arcano14.jpg" alt="La Templanza - Carta del Tarot">
     <h3>XIV - La Templanza</h3>
     <p>
         Simboliza la armonía, el equilibrio interior y la moderación en todas las cosas.
         Representa la integración de opuestos y la búsqueda de paz interior.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano15.jpg">
+    <img class="arcanoresul" src="imagenes/arcano15.jpg" alt="El Diablo - Carta del Tarot">
     <h3>XV - El Diablo</h3>
     <p>
         Representa las tentaciones, las ataduras y las limitaciones autoimpuestas.
         Simboliza la necesidad de liberarse de las cadenas mentales y emocionales.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano16.jpg">
+    <img class="arcanoresul" src="imagenes/arcano16.jpg" alt="La Torre - Carta del Tarot">
     <h3>XVI - La Torre</h3>
     <p>
         Simboliza la destrucción de estructuras obsoletas para permitir el renacimiento y la transformación.
         Es la revelación repentina que lleva al cambio radical.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano17.jpg">
+    <img class="arcanoresul" src="imagenes/arcano17.jpg" alt="La Estrella - Carta del Tarot">
     <h3>XVII - La Estrella</h3>
     <p>
         Representa la esperanza, la inspiración y la conexión con lo divino.
         Es símbolo de fe y renovación espiritual.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano18.jpg">
+    <img class="arcanoresul" src="imagenes/arcano18.jpg" alt="La Luna - Carta del Tarot">
     <h3>XVIII - La Luna</h3>
     <p>
         Simboliza la intuición profunda, los secretos ocultos y los ciclos emocionales.
         Representa la mente subconsciente y la exploración de las profundidades del alma.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano19.jpg">
+    <img class="arcanoresul" src="imagenes/arcano19.jpg" alt="El Sol - Carta del Tarot">
     <h3>XIX - El Sol</h3>
     <p>
         Representa la alegría, la claridad y la energía positiva en la vida.
         Es símbolo de éxito, vitalidad y realización.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano20.jpg">
+    <img class="arcanoresul" src="imagenes/arcano20.jpg" alt="El Juicio - Carta del Tarot">
     <h3>XX - El Juicio</h3>
     <p>
         Simboliza la evaluación, el despertar espiritual y la toma de responsabilidad por nuestras acciones.
         Es la llamada a la transformación consciente.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano21.jpg">
+    <img class="arcanoresul" src="imagenes/arcano21.jpg" alt="El Mundo - Carta del Tarot">
     <h3>XXI - El Mundo</h3>
     <p>
         Simboliza la evaluación, el despertar espiritual y la toma de responsabilidad por nuestras acciones.
         Es la llamada a la transformación consciente.
     </p>
 
-    <img class="arcanoresul" src="imagenes/arcano22.jpg">
+    <img class="arcanoresul" src="imagenes/arcano22.jpg" alt="El Loco - Carta del Tarot">
     <h3>XXII - El Loco</h3>
     <p>
         Representa la libertad, la espontaneidad y el inicio de un nuevo ciclo. Simboliza la confianza en el universo y la disposición para aventurarse sin restricciones ni expectativas preconcebidas.
         Es la energía del presente y la apertura a nuevas experiencias.
     </p>
 </div>
-<nav class="nav">
-    <ul>
-        <li><a href="index.html" >Página inicial</a></li>
-        <li><a href="fecha.html">Calcular Fecha</a></li>
-        <li><a href="resultado.html">Carta</a></li>
-
-    </ul>
-</nav>
 </body>
+<footer class="foot">
+    <p>Si quieres saber más, visita el siguiente artículo:</p>
+    <a href="https://www.infobae.com/america/tecno/2022/12/27/lista-de-6-aplicaciones-para-leer-y-aprender-del-tarot/" target="_blank">Aplicaciones para leer y aprender de Tarot</a>
+</footer>
+</html>
