@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="Ana Rosario Funes" name="autor">
+    <meta content="Página para calcular tu arcano mayor" name="descripcion">
     <meta content="arcanos, tarot, calcular, html, css" name="keywords">
     <title>Calculadora de Arcanos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +45,21 @@
     <p>
         <label for="dia">Día:</label>
         <input type="number" name="dia" id="dia" size="30" placeholder="Ingrese Dia: " maxlength="2" min="0">
-        <label for="mes">Mes:</label>
-        <input type="number" name="mes" id="mes" size="30" placeholder="Ingrese Mes: " maxlength="2" min="0">
+        <label for="mes">Seleccione un Mes:</label>
+        <select name="mes" id="mes">
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
         <label for="anio">Año:</label>
         <input type="number" name="anio" id="anio" size="30" placeholder="Ingrese Año: " maxlength="4" min="0">
     </p>

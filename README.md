@@ -1,5 +1,9 @@
 # PROYECTO TAROT 
 :sparkles:
+- ["Viaje del Ser, Revela tu arquetipo en el Tarot" :sparkles:](#"Viaje-del-Ser,-Revela-tu-arquetipo-en-el-Tarot"-)
+    - [Autor](#autor)
+        - [Descripción](#Descripción)
+        - [Contenido](#Contenido)
 # "Viaje del Ser, Revela tu arquetipo en el Tarot" :sparkles:
 
 :blossom: :hibiscus: :rose: :sunflower:
