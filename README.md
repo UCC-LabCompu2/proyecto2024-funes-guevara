@@ -1,5 +1,6 @@
 # PROYECTO TAROT 
 :sparkles:
+# Indice
 - ["Viaje del Ser, Revela tu arquetipo en el Tarot" :sparkles:](#"Viaje-del-Ser,-Revela-tu-arquetipo-en-el-Tarot"-)
     - [Autor](#autor)
         - [Descripción](#Descripción)
