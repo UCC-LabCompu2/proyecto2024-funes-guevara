@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="estilo.css" type="text/css">
     <link rel="shortcut icon" href="imagenes/favicon.png">
+    <script type="text/javascript" src="funciones.js"></script>
 </head>
 <header>
     <div class="cabecera">
@@ -62,6 +63,12 @@
         </select>
         <label for="anio">Año:</label>
         <input type="number" name="anio" id="anio" size="30" placeholder="Ingrese Año: " maxlength="4" min="0">
+    </p>
+
+    <p>
+    <button type="button" onclick="calcularFecha()">
+        Calcular Fecha
+    </button>
     </p>
 
     <a href="resultado.html" target="_self">Continuar</a>
