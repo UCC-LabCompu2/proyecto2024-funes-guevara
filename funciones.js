@@ -5,14 +5,14 @@
  */
 
 function calcularFecha(){
-    let day = Number(document.getElementById("dia")[0].value);
-    let month = Number(document.getElementById("mes")[0].value);
-    let year = Number(document.getElementById("anio")[0].value);
+    const day = Number(document.getElementById("dia")[0].value);
+    const month = Number(document.getElementById("mes").value);
+    const year = Number(document.getElementById("anio")[0].value);
 
 
     if (dia === '' || mes === '' || anio === '') { //alert para que el usuario ingrese correctamente los datos
         alert('Por favor, complete todos los campos.');
-        return;
+        return false;
     }
 
 }
