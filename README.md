@@ -20,9 +20,8 @@ y recibir una acotada descripción sobre este mismo.
 ### Contenido
 - El código está desarrollado en cuatro páginas html5 y una hoja de estilos en CSS, las páginas se organizan de esta forma:
 1. Index.html : Esta es la página principal, donde se comienza de manera ideal la navegación por el sitio.
-2. Fecha.html : En esta el usuario podrá ingresar de manera simple su fecha de nacimiento.
-3. Resultado.html : Luego de colocar la fecha anteriormente, según la suma de sus dígitos al usuario se le muestra la carta que le corresponde. 
-4. Descripcion.html : Si el usuario desea conocer más sobre su carta es dirigido a esta página, donde se le muestra una pequeña descripción y un link a un articulo por si desea saber más.
+2. Fecha.html : En esta el usuario podrá ingresar de manera simple su fecha de nacimiento, se realiza el calculo y se muestra la carta.
+3. Descripcion.html : Si el usuario desea conocer más sobre su carta es dirigido a esta página, donde se le muestra una pequeña descripción y un link a un articulo por si desea saber más.
 
 | Email              | Autor      |
 |--------------------|------------|

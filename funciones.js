@@ -1,27 +1,3 @@
-
-
-/*window.onload = () =>
-{
-    document.getElementById("calcular").disable = true;
-}
-
-function calculAAArFecha(){
-
-    const day = Number(document.getElementById("dia")[0].value);
-    const month = Number(document.getElementById("mes").value);
-    const year = Number(document.getElementById("anio")[0].value);
-
-    
-
-    if (dia === '' || mes === '' || anio === '') {//alert para que el usuario ingrese correctamente los datos
-        alert('Por favor, complete todos los campos.');
-        return false;
-    } else {
-        document.getElementById("calcular").disable = false;
-    }
-
-}*/
-
 /**
  * Permite dibujar la carta calculada
  * @param numero recibe el valor de la carta
@@ -94,9 +70,10 @@ const calcularFecha = () =>{
     }
 
     const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
-    const sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
+    let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
 
     dibujarCanvas(sumaDigitos);
+    guardarLocalStorage(sumaDigitos);
 }
 
 /**
@@ -105,32 +82,25 @@ const calcularFecha = () =>{
  * @param fecha
  */
 const sumarDigitos = (fecha) => {
+        let suma = fecha.split('').reduce((acc, curr) => acc + parseInt(curr), 0);
+
+        while (suma >= 23) {
+            suma = suma.toString().split('').reduce((acc, curr) => acc + parseInt(curr), 0);
+        }
+
+        return suma;
+}
+
+const guardarLocalStorage = (sumaDigitos) =>{
+    let numero = sumaDigitos;
+    localStorage.setItem("numeroLS", numero);
+    //???
+}
+
+const cargarLocalStorage = () =>{
+    let nro;
+    nro = localStorage.getItem("numeroLS");
 
 }
 
-/*
-function calculaNumero() {
-    const dia = document.getElementById('dia').value;
-    const mes = document.getElementById('mes').value;
-    const anio = document.getElementById('anio').value;
 
-    if (dia === '' || mes === '' || anio === '') {
-        alert('Por favor, complete todos los campos.');
-        return;
-    }
-
-    const fecha = dia + mes + anio;
-    let suma = sumarDigitos(fecha);
-
-    while (suma > 23) {
-        suma = sumarDigitos(suma.toString());
-    }
-
-    document.getElementById('resultado').innerText = `El resultado es: ${suma}`;
-}
-
-function sumarDigitos(numero) {
-    return numero.split('').reduce((acc, curr) => acc + parseInt(curr), 0);
-}
-
-*/
