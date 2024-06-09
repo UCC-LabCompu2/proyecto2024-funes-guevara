@@ -1,4 +1,54 @@
 /**
+ * funcion principal, controla la carga de datos y hace llamada a las otras funciones
+ * @method calcularFecha
+ * no recibe parametros
+ */
+const calcularFecha = () =>{
+    //toma los valores obtenidos x el usuario
+    const dia = document.getElementById('dia').value;
+    const mes = document.getElementById('mes').value;
+    const anio = document.getElementById('anio').value;
+
+    //controla que sea válido
+    if (dia === '' || mes === '' || anio === '') {//pedir usuario que reingrese
+        alert('Por favor, complete todos los campos correctamente.');
+        blanquearCampos()
+        return;
+    }
+
+    const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
+    let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
+
+    dibujarCanvas(sumaDigitos);
+}
+
+ /**
+ * blanquea los campos por si el usuario ingresó mal un valor
+ * @method blanquearCampos
+ * no recibe parametros de  ningun tipo
+ */
+const blanquearCampos = () => {
+    document.getElementById('dia').value = '';
+    document.getElementById('mes').value = '01'; //enero
+    document.getElementById('anio').value = '';
+}
+
+/**
+ * realiza la suma de la fecha ingresada
+ * @method sumarDigitos
+ * @param fecha
+ */
+const sumarDigitos = (fecha) => {
+    let suma = fecha.split('').reduce((acc, curr) => acc + parseInt(curr), 0);
+
+    while (suma >= 23) {
+        suma = suma.toString().split('').reduce((acc, curr) => acc + parseInt(curr), 0);
+    }
+
+    return suma;
+}
+
+/**
  * Permite dibujar la carta calculada
  * @param numero recibe el valor de la carta
  * @method dibujarCanvas
@@ -9,6 +59,7 @@
 const dibujarCanvas = (numero) => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+    const descripcionCarta = document.getElementById('descripcionCarta');
     const imagenes = [ //arreglo de imagenes
         'imagenes/arcano1.jpg', 'imagenes/arcano2.jpg', 'imagenes/arcano3.jpg',
         'imagenes/arcano4.jpg', 'imagenes/arcano5.jpg', 'imagenes/arcano6.jpg',
@@ -22,8 +73,8 @@ const dibujarCanvas = (numero) => {
     const descripciones = [ //arreglo para las descripciones
         "El Mago", "La Sacerdotisa", "La Emperatriz",
         "El Emperador", "El Sumo Sacerdote", "Los Enamorados",
-        "El Carro", "La Justicia", "El Ermitaño",
-        "La Rueda de la Fortuna", "La Fuerza", "El Colgado",
+        "El Carro", "La Fuerza" , "El Ermitaño",
+        "La Rueda de la Fortuna", "La Justicia", "El Colgado",
         "La Muerte", "La Templanza", "El Diablo",
         "La Torre", "La Estrella", "La Luna",
         "El Sol", "El Juicio", "El Mundo",
@@ -55,63 +106,17 @@ const dibujarCanvas = (numero) => {
     ]
     const img = new Image();
     img.src = imagenes[numero - 1];
-    img.onload = () => {
+    img.onload = () => { //crea una funcion tipo flecha para dibujar todo
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         ctx.font = "20px Serif";
+        ctx.fillStyle = "black";
         ctx.fillText(descripciones[numero - 1], 10, canvas.height - 10);
         descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`;
     };
 }
 
-/**
- * blanquea los campos por si el usuario ingresó mal un valor
- * @method blanquearCampos
- * no recibe parametros de  ningun tipo
- */
-const blanquearCampos = () => {
-    document.getElementById('dia').value = '';
-    document.getElementById('mes').value = '01'; //enero
-    document.getElementById('anio').value = '';
-}
 
-/**
- * funcion principal, controla la carga de datos y hace llamada a las otras funciones
- * @method calcularFecha
- * no recibe parametros
- */
-const calcularFecha = () =>{
-    //toma los valores obtenidos x el usuario
-    const dia = document.getElementById('dia').value;
-    const mes = document.getElementById('mes').value;
-    const anio = document.getElementById('anio').value;
 
-    //controla que sea válido
-    if (dia === '' || mes === '' || anio === '') {//pedir usuario que reingrese
-        alert('Por favor, complete todos los campos correctamente.');
-        blanquearCampos()
-        return;
-    }
 
-    const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
-    let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
-
-    dibujarCanvas(sumaDigitos);
-    guardarLocalStorage(sumaDigitos);
-}
-
-/**
- * realiza la suma de la fecha ingresada
- * @method sumarDigitos
- * @param fecha
- */
-const sumarDigitos = (fecha) => {
-        let suma = fecha.split('').reduce((acc, curr) => acc + parseInt(curr), 0);
-
-        while (suma >= 23) {
-            suma = suma.toString().split('').reduce((acc, curr) => acc + parseInt(curr), 0);
-        }
-
-        return suma;
-}
 
