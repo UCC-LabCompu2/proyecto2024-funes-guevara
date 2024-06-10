@@ -4,43 +4,50 @@
  * no recibe parametros
  */
 const calcularFecha = () => {
-    //toma los valores obtenidos x el usuario
+    // toma los valores obtenidos por el usuario y los convierte en un entero para trabajar con el
     const dia = document.getElementById('dia').value;
     const mes = document.getElementById('mes').value;
     const anio = document.getElementById('anio').value;
 
-    //controla que se haya ingresado algo en todos los campos
-    if (dia === '' || mes === '' || anio === '') {//pedir usuario que reingrese
+    // controla que los valores sean válidos
+    if (dia === '' || mes === '' || anio === '') {
         alert('Por favor, complete todos los campos correctamente.');
-        blanquearCampos()
-        return;
-    }
-    // convierte el valor del mes a entero
-    const mesNumero = parseInt(mes);
-
-    // verificamos si el mes es válido
-    if (mesNumero < 1 || mesNumero > 12) {
-        alert('Por favor, seleccione un mes válido.');
         blanquearCampos();
         return;
     }
 
-    // convierte el valor del año a entero
-    const anioNumero = parseInt(anio);
+    if (dia > 31 ){
+        alert('Complete los campos correctamente');
+        blanquearCampos();
+        return;
+    }
 
-    // definimos un rango y verificamos que el año esté entre este
-    if (anioNumero < 1950 || anioNumero > 2024) {
+    if(mes === 2){ //febrero bisiesto o no
+        if (dia > 29){
+            alert('Complete los campos correctamente');
+            blanquearCampos();
+            return;
+        }
+        if (dia > 28 && anio%4 !==0){
+            alert('Complete los campos correctamente');
+            blanquearCampos();
+            return;
+        }
+    }
+
+    if( mes === 4 && dia > 30|| mes === 6 && dia > 30 || mes === 9 && dia > 30 || mes === 11 && dia > 30){
+            alert('Complete los campos correctamente');
+            blanquearCampos();
+            return;
+    }
+
+    // verificamos si el año está dentro del rango permitido
+    if (anio < 1950 || anio > 2024) {
         alert('Por favor, ingrese un año válido entre 1950 y 2024.');
         blanquearCampos();
         return;
     }
 
-    // llama a la funcion para ver si el dia esta bien ingresado
-    if (!esDiaValidoParaMes(dia, mesNumero, anioNumero)) {
-        alert('Por favor, ingrese un día válido para el mes seleccionado.');
-        blanquearCampos();
-        return;
-    }
 
     const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
     let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
@@ -146,8 +153,3 @@ const dibujarCanvas = (numero) => {
         descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //genere un arreglo para que me muestre los textos,como si fueran un parrafo, en el div :)
     };
 }
-
-
-
-
-

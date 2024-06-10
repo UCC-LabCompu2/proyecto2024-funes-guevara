@@ -1,16 +1,16 @@
-div{
+div {
     border: 2px solid rgba(119, 40, 238, 0.82);
     padding: 10px;
     margin: 7px 20px 5px;
     background-color: rgba(216, 183, 246, 0.81);
     text-align: center;
-    font-family:"Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 30px;
 }
 
-.cabecera{
+.cabecera {
     border: 2px solid rgba(119, 40, 238, 0.82);
     padding: 10px;
     margin: 7px 20px 5px;
@@ -19,62 +19,62 @@ div{
     text-align: center;
 }
 
-#pinguin{
+#pinguin {
     width: 130px;
     height: 130px;
     float: left;
     border-radius: 50%;
 }
 
-.tarot{
+.tarot {
     text-align: justify;
     background-color: #c4bee8;
     background-image: url("imagenes/fondo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    font-family:"Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 30px;
 }
 
-.foot{
+.foot {
     border: 2px solid rgba(119, 40, 238, 0.82);
     padding: 10px;
     margin: 7px 20px 5px;
     background-color: rgba(216, 183, 246, 0.81);
     text-align: center;
-    font-family:"Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 30px;
 }
 
 
-h1{
+h1 {
     font-family: "Sedan SC", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
     color: #56088f;
- }
+}
 
-h2{
+h2 {
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
     color: #e1be58;
- }
+}
 
-.arcano{
+.arcano {
     width: 250px;
     height: 300px;
     float: initial;
 }
 
-.arcanoresul{
+.arcanoresul {
     width: 200px;
     height: 250px;
     float: initial;
@@ -100,7 +100,7 @@ nav {
     color: #0e0303;
     padding: 10px;
     margin: 7px 20px 5px;
-    font-family:"Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 30px;
