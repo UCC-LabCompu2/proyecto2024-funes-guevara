@@ -9,12 +9,22 @@ const calcularFecha = () =>{
     const mes = document.getElementById('mes').value;
     const anio = document.getElementById('anio').value;
 
-    //controla que sea válido
+    //controla que se haya ingresado algo en todos los campos
     if (dia === '' || mes === '' || anio === '') {//pedir usuario que reingrese
         alert('Por favor, complete todos los campos correctamente.');
         blanquearCampos()
         return;
     }
+    // convertimos el valor del año a entero
+    const anioNumero = parseInt(anio, 10);
+
+    // ponemos un rango para el año, verificamos que se cumpla
+    if (anioNumero < 1950 || anioNumero > 2024) {
+        alert('Por favor, ingrese un año válido entre 1950 y 2024.');
+        blanquearCampos();
+        return;
+    }
+
 
     const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
     let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
@@ -112,7 +122,7 @@ const dibujarCanvas = (numero) => {
         ctx.font = "20px Serif";
         ctx.fillStyle = "black";
         ctx.fillText(descripciones[numero - 1], 10, canvas.height - 10);
-        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`;
+        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //en esta linea genere un arreglo para que me muestre los textos en el div :)
     };
 }
 
