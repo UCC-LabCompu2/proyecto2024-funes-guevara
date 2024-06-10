@@ -15,30 +15,29 @@ const calcularFecha = () => {
         blanquearCampos();
         return;
     }
-
-    if (dia > 31 ){
+    if (dia > 31) {
         alert('Complete los campos correctamente');
         blanquearCampos();
         return;
     }
 
-    if(mes === 2){ //febrero bisiesto o no
-        if (dia > 29){
+    if (mes === 2) { //febrero bisiesto o no
+        if (dia > 29) {
             alert('Complete los campos correctamente');
             blanquearCampos();
             return;
         }
-        if (dia > 28 && anio%4 !==0){
+        if (dia > 28 && anio % 4 !== 0) {
             alert('Complete los campos correctamente');
             blanquearCampos();
             return;
         }
     }
 
-    if( mes === 4 && dia > 30|| mes === 6 && dia > 30 || mes === 9 && dia > 30 || mes === 11 && dia > 30){
-            alert('Complete los campos correctamente');
-            blanquearCampos();
-            return;
+    if (mes === 4 && dia > 30 || mes === 6 && dia > 30 || mes === 9 && dia > 30 || mes === 11 && dia > 30) {
+        alert('Complete los campos correctamente');
+        blanquearCampos();
+        return;
     }
 
     // verificamos si el año está dentro del rango permitido
@@ -55,8 +54,7 @@ const calcularFecha = () => {
 }
 
 
-
- /**
+/**
  * blanquea los campos por si el usuario ingresó mal un valor
  * @method blanquearCampos
  * no recibe parametros de  ningun tipo
@@ -111,7 +109,7 @@ const dibujarCanvas = (numero) => {
     const descripciones = [ //arreglo para las descripciones, igual que las imagenes
         "El Mago", "La Sacerdotisa", "La Emperatriz",
         "El Emperador", "El Sumo Sacerdote", "Los Enamorados",
-        "El Carro", "La Fuerza" , "El Ermitaño",
+        "El Carro", "La Fuerza", "El Ermitaño",
         "La Rueda de la Fortuna", "La Justicia", "El Colgado",
         "La Muerte", "La Templanza", "El Diablo",
         "La Torre", "La Estrella", "La Luna",
