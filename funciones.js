@@ -3,7 +3,7 @@
  * @method calcularFecha
  * no recibe parametros
  */
-const calcularFecha = () =>{
+const calcularFecha = () => {
     //toma los valores obtenidos x el usuario
     const dia = document.getElementById('dia').value;
     const mes = document.getElementById('mes').value;
@@ -15,22 +15,39 @@ const calcularFecha = () =>{
         blanquearCampos()
         return;
     }
-    // convertimos el valor del año a entero
-    const anioNumero = parseInt(anio, 10);
+    // convierte el valor del mes a entero
+    const mesNumero = parseInt(mes);
 
-    // ponemos un rango para el año, verificamos que se cumpla
+    // verificamos si el mes es válido
+    if (mesNumero < 1 || mesNumero > 12) {
+        alert('Por favor, seleccione un mes válido.');
+        blanquearCampos();
+        return;
+    }
+
+    // convierte el valor del año a entero
+    const anioNumero = parseInt(anio);
+
+    // definimos un rango y verificamos que el año esté entre este
     if (anioNumero < 1950 || anioNumero > 2024) {
         alert('Por favor, ingrese un año válido entre 1950 y 2024.');
         blanquearCampos();
         return;
     }
 
+    // llama a la funcion para ver si el dia esta bien ingresado
+    if (!esDiaValidoParaMes(dia, mesNumero, anioNumero)) {
+        alert('Por favor, ingrese un día válido para el mes seleccionado.');
+        blanquearCampos();
+        return;
+    }
 
     const fecha = dia + mes + anio; //como no quiero sumar los valores sino ordenarlos uno atras de otro esta bien asi
     let sumaDigitos = sumarDigitos(fecha); //envio fecha para que se realice el calculo en otra funcion
-
-    dibujarCanvas(sumaDigitos);
+    dibujarCanvas(sumaDigitos); //llama al dibujo de canva
 }
+
+
 
  /**
  * blanquea los campos por si el usuario ingresó mal un valor
@@ -47,9 +64,13 @@ const blanquearCampos = () => {
  * realiza la suma de la fecha ingresada
  * @method sumarDigitos
  * @param fecha
+ * @return suma
  */
 const sumarDigitos = (fecha) => {
-    let suma = fecha.split('').reduce((acc, curr) => acc + parseInt(curr), 0);
+    let suma = fecha.split('').reduce((acc, curr) => acc + parseInt(curr), 0); //split divide los elementos del array
+    //reduce es un metodo para los arrays en java para crear un acumulador (valores acumulados hasta ese punto)
+    //curr es el valor actual que toma el array, le aplico parseInt para que sea un entero, y se sume a acc y se acumule
+    //0, es el valor inicial que tomo en la posicion del array para calcular
 
     while (suma >= 23) {
         suma = suma.toString().split('').reduce((acc, curr) => acc + parseInt(curr), 0);
@@ -70,7 +91,7 @@ const dibujarCanvas = (numero) => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const descripcionCarta = document.getElementById('descripcionCarta');
-    const imagenes = [ //arreglo de imagenes
+    const imagenes = [ //arreglo de imagenes, para que esten todas en el mismo lugar
         'imagenes/arcano1.jpg', 'imagenes/arcano2.jpg', 'imagenes/arcano3.jpg',
         'imagenes/arcano4.jpg', 'imagenes/arcano5.jpg', 'imagenes/arcano6.jpg',
         'imagenes/arcano7.jpg', 'imagenes/arcano8.jpg', 'imagenes/arcano9.jpg',
@@ -80,7 +101,7 @@ const dibujarCanvas = (numero) => {
         'imagenes/arcano19.jpg', 'imagenes/arcano20.jpg', 'imagenes/arcano21.jpg',
         'imagenes/arcano22.jpg'
     ]
-    const descripciones = [ //arreglo para las descripciones
+    const descripciones = [ //arreglo para las descripciones, igual que las imagenes
         "El Mago", "La Sacerdotisa", "La Emperatriz",
         "El Emperador", "El Sumo Sacerdote", "Los Enamorados",
         "El Carro", "La Fuerza" , "El Ermitaño",
@@ -90,7 +111,7 @@ const dibujarCanvas = (numero) => {
         "El Sol", "El Juicio", "El Mundo",
         "El Loco"
     ]
-    const textos = [
+    const textos = [ //array para las descripciones extendidas,igual que img y desc quiero que esten todos en el mismo lugar
         "Representa el poder de la voluntad y la manifestación. Es el iniciador de acciones creativas y posee habilidades para canalizar energías y convertir ideas en realidad.",
         "Simboliza la intuición profunda, el conocimiento interior y la conexión con lo divino femenino. Es la guardiana de los secretos y la sabiduría oculta.",
         "Representa la feminidad, la fertilidad y la creatividad. Es símbolo de abundancia, belleza y poder creativo en todas sus formas.",
@@ -114,15 +135,15 @@ const dibujarCanvas = (numero) => {
         "Simboliza la culminación, el logro y la integración. Representa la realización de nuestros objetivos y la armonía completa.",
         "Simboliza el comienzo, la aventura y la libertad. Representa la espontaneidad y el viaje hacia lo desconocido."
     ]
-    const img = new Image();
-    img.src = imagenes[numero - 1];
-    img.onload = () => { //crea una funcion tipo flecha para dibujar todo
+    const img = new Image(); //creo un objeto
+    img.src = imagenes[numero - 1]; //-1 para que tenga bien la direccion de memoria segun la imagen
+    img.onload = () => { //crea una funcion tipo flecha para dibujar tanto la imagen como los textos
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         ctx.font = "20px Serif";
         ctx.fillStyle = "black";
         ctx.fillText(descripciones[numero - 1], 10, canvas.height - 10);
-        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //en esta linea genere un arreglo para que me muestre los textos en el div :)
+        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //genere un arreglo para que me muestre los textos,como si fueran un parrafo, en el div :)
     };
 }
 
