@@ -1,7 +1,6 @@
 /**
  * funcion principal, controla la carga de datos y hace llamada a las otras funciones
  * @method calcularFecha
- * no recibe parametros
  */
 const calcularFecha = () => {
     // toma los valores obtenidos por el usuario y los convierte en un entero para trabajar con el
@@ -15,26 +14,19 @@ const calcularFecha = () => {
         blanquearCampos();
         return;
     }
-    if (dia > 31) {
+    if (dia<1){
         alert('Complete los campos correctamente');
         blanquearCampos();
         return;
     }
 
-    if (mes === 2) { //febrero bisiesto o no
-        if (dia > 29) {
-            alert('Complete los campos correctamente');
-            blanquearCampos();
-            return;
-        }
-        if (dia > 28 && anio % 4 !== 0) {
-            alert('Complete los campos correctamente');
-            blanquearCampos();
-            return;
-        }
-    }
+   if ((dia > 31) || (mes==2 && dia>29) || (mes==2 && dia>28 && anio % 4 !==0)){
+       alert('Complete los campos correctamente');
+       blanquearCampos();
+       return;
+   }
 
-    if (mes === 4 && dia > 30 || mes === 6 && dia > 30 || mes === 9 && dia > 30 || mes === 11 && dia > 30) {
+    if (mes == 4 && dia > 30 || mes == 6 && dia > 30 || mes == 9 && dia > 30 || mes == 11 && dia > 30) {
         alert('Complete los campos correctamente');
         blanquearCampos();
         return;
@@ -57,12 +49,18 @@ const calcularFecha = () => {
 /**
  * blanquea los campos por si el usuario ingresó mal un valor
  * @method blanquearCampos
- * no recibe parametros de  ningun tipo
  */
 const blanquearCampos = () => {
     document.getElementById('dia').value = '';
     document.getElementById('mes').value = '01'; //enero
     document.getElementById('anio').value = '';
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+
+    const descripcionCarta = document.getElementById('descripcionCarta');
+    descripcionCarta.innerHTML = ''; // Limpia la descripción
 }
 
 /**
@@ -96,16 +94,8 @@ const dibujarCanvas = (numero) => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const descripcionCarta = document.getElementById('descripcionCarta');
-    const imagenes = [ //arreglo de imagenes, para que esten todas en el mismo lugar
-        'imagenes/arcano1.jpg', 'imagenes/arcano2.jpg', 'imagenes/arcano3.jpg',
-        'imagenes/arcano4.jpg', 'imagenes/arcano5.jpg', 'imagenes/arcano6.jpg',
-        'imagenes/arcano7.jpg', 'imagenes/arcano8.jpg', 'imagenes/arcano9.jpg',
-        'imagenes/arcano10.jpg', 'imagenes/arcano11.jpg', 'imagenes/arcano12.jpg',
-        'imagenes/arcano13.jpg', 'imagenes/arcano14.jpg', 'imagenes/arcano15.jpg',
-        'imagenes/arcano16.jpg', 'imagenes/arcano17.jpg', 'imagenes/arcano18.jpg',
-        'imagenes/arcano19.jpg', 'imagenes/arcano20.jpg', 'imagenes/arcano21.jpg',
-        'imagenes/arcano22.jpg'
-    ]
+
+
     const descripciones = [ //arreglo para las descripciones, igual que las imagenes
         "El Mago", "La Sacerdotisa", "La Emperatriz",
         "El Emperador", "El Sumo Sacerdote", "Los Enamorados",
@@ -141,7 +131,7 @@ const dibujarCanvas = (numero) => {
         "Simboliza el comienzo, la aventura y la libertad. Representa la espontaneidad y el viaje hacia lo desconocido."
     ]
     const img = new Image(); //creo un objeto
-    img.src = imagenes[numero - 1]; //-1 para que tenga bien la direccion de memoria segun la imagen
+    img.src = `imagenes/arcano${numero}.jpg`;
     img.onload = () => { //crea una funcion tipo flecha para dibujar tanto la imagen como los textos
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
