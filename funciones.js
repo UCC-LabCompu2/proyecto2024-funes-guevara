@@ -141,3 +141,35 @@ const dibujarCanvas = (numero) => {
         descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //genere un arreglo para que me muestre los textos,como si fueran un parrafo, en el div :)
     };
 }
+
+
+let x = 0; // declaro la variable x para controlar la posición horizontal de la imagen
+let dx = 2; // velocidad de movimiento de la imagen
+
+let animateCanvas = () => {
+    const canvas = document.getElementById("miCanvas");
+    const ctx = canvas.getContext("2d");
+    const imag = new Image();
+    imag.src = "imagenes/pingumago.png"; // Corregir comillas aquí
+
+    imag.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas en cada frame
+        ctx.drawImage(imag, x, 0, 300, 330);
+    }
+
+    x += dx;
+    if (x > canvas.width) {
+        x = -300; // Reiniciar la posición de la imagen para que aparezca desde la izquierda
+    }
+}
+
+let intervalId;
+
+let startAnimacion = () => {
+    intervalId = setInterval(animateCanvas, 15);
+    setTimeout(stopAnimacion, 6000);
+}
+
+let stopAnimacion = () => {
+    clearInterval(intervalId);
+}
