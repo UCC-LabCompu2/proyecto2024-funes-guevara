@@ -14,17 +14,17 @@ const calcularFecha = () => {
         blanquearCampos();
         return;
     }
-    if (dia<1){
+    if (dia < 1) {
         alert('Complete los campos correctamente');
         blanquearCampos();
         return;
     }
 
-   if ((dia > 31) || (mes==2 && dia>29) || (mes==2 && dia>28 && anio % 4 !==0)){
-       alert('Complete los campos correctamente');
-       blanquearCampos();
-       return;
-   }
+    if ((dia > 31) || (mes == 2 && dia > 29) || (mes == 2 && dia > 28 && anio % 4 !== 0)) {
+        alert('Complete los campos correctamente');
+        blanquearCampos();
+        return;
+    }
 
     if (mes == 4 && dia > 30 || mes == 6 && dia > 30 || mes == 9 && dia > 30 || mes == 11 && dia > 30) {
         alert('Complete los campos correctamente');
