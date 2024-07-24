@@ -138,7 +138,7 @@ const dibujarCanvas = (numero) => {
         ctx.font = "20px Serif";
         ctx.fillStyle = "black";
         ctx.fillText(descripciones[numero - 1], 10, canvas.height - 10);
-        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //genere un arreglo para que me muestre los textos,como si fueran un parrafo, en el div :)
+        descripcionCarta.innerHTML = `<p>${textos[numero - 1]}</p>`; //muestre los textos del array,como si fueran un parrafo, en el div :)
     };
 }
 
